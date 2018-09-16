@@ -1,3 +1,5 @@
 ---
 - hosts: dallas-mbp
   connection: local
+  roles:
+    - ../../common/roles/dotfiles

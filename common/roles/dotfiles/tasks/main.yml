@@ -1,0 +1,14 @@
+---
+- name: Clone dotfiles repository.
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_repo_local_destination }}"
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+  register: repository
+
+- name: Run script to configure dotfiles.
+  command: "{{ dotfiles_install_command }}"
+  args:
+    chdir: "{{ dotfiles_repo_local_destination }}"
+  failed_when: false
+  when: repository.changed

@@ -1,0 +1,7 @@
+---
+dotfiles_repo: "https://github.com/yukidallas/dotfiles.git"
+dotfiles_repo_accept_hostkey: no
+dotfiles_repo_local_destination: "~/.config/dotfiles"
+
+dotfiles_home: "~"
+dotfiles_install_command: "make install"
